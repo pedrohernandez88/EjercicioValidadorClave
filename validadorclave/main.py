@@ -8,3 +8,12 @@ def main():
     validador_calisto = Validador(ReglaValidacionCalisto)
 
     clave = input("Introduce una clave para validar: ")
+
+     # Validar con regla Ganimedes
+    try:
+        if validador_ganimedes.es_valida(clave):
+            print("La clave es válida según la regla de Ganimedes.")
+    except (NoCumpleLongitudMinimaError, NoTieneLetraMayusculaError, NoTieneLetraMinusculaError,
+            NoTieneNumeroError, NoTieneCaracterEspecialError) as e:
+        print(f"Error de validación con la regla de Ganimedes: {str(e)}")
+
