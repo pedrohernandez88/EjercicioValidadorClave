@@ -17,3 +17,13 @@ def main():
             NoTieneNumeroError, NoTieneCaracterEspecialError) as e:
         print(f"Error de validación con la regla de Ganimedes: {str(e)}")
 
+     # Validar con regla Calisto
+    try:
+        if validador_calisto.es_valida(clave):
+            print("La clave es válida según la regla de Calisto.")
+    except (NoCumpleLongitudMinimaError, NoTieneLetraMayusculaError, NoTieneLetraMinusculaError,
+            NoTieneNumeroError, NoTienePalabraSecretaError) as e:
+        print(f"Error de validación con la regla de Calisto: {str(e)}")
+
+if __name__ == "__main__":
+    main()    
